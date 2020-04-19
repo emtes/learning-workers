@@ -9,8 +9,18 @@ addEventListener("fetch", (event) => {
 async function handleRequest(request) {
   const apiUrls = await requestUrls();
   const resUrl = apiUrls[getRandomIndex(apiUrls.length)];
-  console.log(resUrl);
-  return new Response(resUrl, { status: 200 });
+  const doc = await load(resUrl);
+  return new Response(doc, { headers: { "Content-Type": "text/html" } });
+}
+
+/*
+ * Fetch response from url resolving with text
+ * @param {String} URL
+ */
+async function load(url) {
+  const res = await fetch(url);
+  const html = await res.text();
+  return html;
 }
 
 /*
