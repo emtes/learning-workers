@@ -11,6 +11,7 @@
   "author": "Kristian Freeman <kristian@kristianfreeman.com>",
   "license": "MIT",
   "devDependencies": {
+    "eslint": "^6.8.0",
     "prettier": "^1.18.2"
   }
 }
