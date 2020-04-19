@@ -42,6 +42,10 @@ async function load(url) {
   return html;
 }
 
+/*
+ * Replace text with regular expressions
+ * @param {String} text to modify
+ */
 function modifyVariants(htmlText) {
   // Text replacement, had trouble implementing HTMLRewriter API, will learn more when I'm less busy :)
   let newHTML = htmlText;
